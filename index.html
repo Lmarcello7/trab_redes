@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o jogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Funcionalidades</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+					<p>Seja bem vindo, este é um jogo para adivinhar um numero gerado pelo computador, trabalhando com sockets.</p>
+					<hr>
+					<h5>Dificuldades:</h5>
+					<ul>
+						<li>Fácil: Tempo para responder de 30 segundos.</li>
+						<li>Médio: Tempo para responder de 15 segundos.</li>
+						<li>Difícil: Tempo para responder de 10 segundos.</li>
+					</ul>
+					<hr>
+					<h5>Tecnologias utilizadas:</h5>
+					<ul>
+						<li>Jquery</li>
+						<li>Bootstrap 4</li>
+						<li>Html 5</li>
+						<li>Css 3</li>
+						<li>Php</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MODAL -->
+    <div class="container-fluid d-flex justify-content-center">
+		<div class="mt-3 col-7">
+			<div class="card">
+				<div class="card-header text-center">
+					<h5>Adivinhe o número</h5>
+				</div>
+				<div class="card-body">
+					<div class="row justify-content-center">
+					<div class="col-4">
+						<button type="button" class="btn btn-success w-100" onclick="go()">
+							Jogar&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i>
+						</button>
+					</div>
+					</div>
+					<div class="row justify-content-center mt-4">
+					<div class="col-4">
+						<button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#exampleModal">
+							Como funciona?&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i>
+						</button>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script>
+		function go()
+		{
+			location.href = 'option.html';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o jogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- MODAL -->
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			AAAA
+			</div>
+		</div>
+	</div>
+	<!-- MODAL -->
+    <div class="container-fluid d-flex justify-content-center">
+
+		<div class="mt-3 col-7">
+			<div class="card">
+				<div class="card-header text-center d-flex">
+					<div class="col-3"></div>
+                    <div class="col-6 d-flex align-items-center justify-content-center">
+                        <h5>Adivinhe o número</h5>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end">
+                        <a href="index.html" class="btn bg-light rounded">Voltar</a>
+                    </div>
+				</div>
+				<div class="card-body">
+					<form action="php/game.php" id="form">
+						<div class="align-center">
+							<h5>Dificuldade:</h5>
+							<table width="50%" class="m-auto">
+								<tr>
+									<td>
+										<input type="radio" name="level" id="easy" value="F" checked> Fácil
+									</td>
+									<td>
+										<input type="radio" name="level" id="medium" value="M"> Médio
+									</td>
+									<td>
+										<input type="radio" name="level" id="hard" value="D"> Difícil
+									</td>
+								</tr>
+							</table>
+							<hr>
+							<h5>Números: <small class="text-danger font-4">*Escolha o limite de geração do número</small></h5>
+							<div class="row justify-content-center">
+								<div class="col-2">
+									<input type="number" name="min" id="min" minlength="1" class="form-control form-control-sm" value="1">
+								</div>
+								<div class="col-1">
+									<b>Até</b>
+								</div>
+								<div class="col-2">
+									<input type="number" name="max" id="max" minlength="1" class="form-control form-control-sm" value="10">
+								</div>
+							</div>
+							<div class="row justify-content-center mt-4">
+								<div class="col-2">
+									<button type="submit" class="btn btn-success" onclick="play()">
+										Começar&nbsp;&nbsp;<i class="fa fa-play"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" ></script>
+	<script>
+		function play()
+		{
+			document.getElementById('form').submit();
+		}
+	</script>
+</body>
+</html>
