@@ -27,6 +27,8 @@ switch($dificuldade){
 /* GERA O NUMERO ALEATÓRIO E SALVA EM UMA SESSÃO */
 session_start();
 $_SESSION['numAleatorio'] = rand($inicio, $maximo);
+
+var_dump($_SESSION['numAleatorio']);
 ?>
 
 <!DOCTYPE html>
@@ -107,19 +109,30 @@ $_SESSION['numAleatorio'] = rand($inicio, $maximo);
 
             $('#btnEnviar').click(() => {
                 pararCronometro();
-                var num = $('#guess').val();
+                var num = $('#guess').val(),
+                    player = $('#jogador').val();
+
 
                 if (num > 0 || num !== '') {
+                    pararCronometro();
+
                     $.ajax({
-                        url: 'api.php',  // Seu servidor socket PHP
+                        url: 'api.php',
                         type: 'POST',
-                        data: { numero: num },
+                        data: { numero: num, numGerado: '<?= $_SESSION['numAleatorio'] ?>' },
                         success: function (response) {
-                            console.log("Resposta do servidor: " + response);
-                            // Faça o que for necessário com a resposta
+                            if(response.resposta){
+                                alert(`Jogador ${$player} ganhou, era o número ${$num}`);
+                                location.reload();
+                            } else {
+                                atualizaPlayer($('#jogador').val());
+                                iniciarCronometro('<?= $timer ?>');
+                                alert('Número Errado');
+                                $('#guess').val('');
+                            }
                         },
                         error: function (xhr, status, error) {
-                            // console.error('Erro na solicitação ao servidor.');
+                            console.error('Erro na solicitação ao servidor.');
                         }
                     });
                 } else {
